@@ -46,8 +46,19 @@ async function connect() {
   }
 }
 connect()
-app.get("/", (req, res) => {
-
+app.get("/:urlId", async(req, res) => {
+  const urlId=req.params.urlId;
+  const server=hr.get(urlId);
+  //never use select * in actual production
+  const result=await clients[server].query("SELECT * FROM URL_TABLE WHERE URL_ID = $1",[urlId])
+  if (result.rowCount > 0){
+        res.send({
+      "urlId":urlId,
+      "server":server,
+      "url":result.rows[0]
+    })
+  }
+  res.send("Error")
 })
 
 app.post("/", async(req, res) => {
