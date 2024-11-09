@@ -1,0 +1,33 @@
+services:
+  postgres-1:
+    container_name: postgres-1
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5438:5432"
+    environment:
+      POSTGRES_PASSWORD: demo
+      POSTGRES_DB: url
+
+  postgres-2:
+    container_name: postgres-2
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5437:5432"
+    environment:
+      POSTGRES_PASSWORD: demo
+      POSTGRES_DB: url
+
+  postgres-3:
+    container_name: postgres-3
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5436:5432"
+    environment:
+      POSTGRES_PASSWORD: demo
+      POSTGRES_DB: url

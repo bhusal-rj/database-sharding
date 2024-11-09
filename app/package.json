@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "consistent-hash": "^1.2.2",
+    "express": "^4.21.1",
+    "pg": "^8.13.1"
+  }
+}
