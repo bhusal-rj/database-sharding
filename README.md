@@ -11,3 +11,8 @@
 - Transactions across shards cause issue.
 - Joins
 - Schema and Shard servers chages are hard
+
+## When to use sharding?
+- Last thing we need to implement is shrading as it is the most complicated thing to do
+- If possible always prefer to use the techniques like database replication, partition.
+
